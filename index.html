@@ -209,6 +209,8 @@ footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;
 .card-link{display:block;text-decoration:none;color:inherit}
 .card-ph{position:relative;aspect-ratio:1/1;background:var(--bg,var(--photo));border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;border-radius:2px}
 .card-ph img{width:100%;height:100%;object-fit:contain}
+.card-ph img.alt{position:absolute;inset:0;opacity:0;transition:opacity .25s ease}
+@media (hover:hover){a.card-link:hover .card-ph img.alt,div.card-link:hover .card-ph img.alt{opacity:1}}
 .card-ph svg.logo{width:34%;height:auto;color:var(--fg,#E7E9EB);fill:currentColor;opacity:.92}
 .tag{position:absolute;top:10px;left:10px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:var(--paper);color:var(--ink);border:1px solid var(--ink);padding:4px 8px;border-radius:2px}
 .card-body{padding:12px 2px 0}
@@ -273,17 +275,18 @@ a.card-link:hover .card-ph,a.card-link:focus-visible .card-ph{border-color:var(-
     <div class="wrap">
       <div class="sec-head">
         <h2 id="kol-title">Koleksiyon</h2>
-        <span class="mono muted" id="kol-count" aria-live="polite">05 ürün</span>
+        <span class="mono muted" id="kol-count" aria-live="polite">10 ürün</span>
       </div>
       <div class="tabs" role="tablist" aria-label="Kategoriler">
         <button class="tab" role="tab" type="button" aria-selected="true" data-filter="all">Tümü</button>
         <button class="tab" role="tab" type="button" aria-selected="false" data-filter="tisort">Tişörtler</button>
         <button class="tab" role="tab" type="button" aria-selected="false" data-filter="hoodie">Hoodie</button>
+        <button class="tab" role="tab" type="button" aria-selected="false" data-filter="sweat">Sweatshirt</button>
       </div>
       <ul class="grid" id="kol-grid">
         <li class="card" data-kat="tisort">
           <a class="card-link" href="#urun" aria-label="Quiet Is a Style., Siyah, 849 TL">
-            <div class="card-ph"><img src="img/sirt-kart.jpg" alt="Siyah oversize tişört, sırtta QUIET IS A STYLE. baskısı" loading="lazy" width="640" height="640"></div>
+            <div class="card-ph"><img src="img/sirt-kart.jpg" alt="Siyah oversize tişört, sırtta QUIET IS A STYLE. baskısı" loading="lazy" width="720" height="720"></div>
             <div class="card-body">
               <p class="mono muted" style="margin:0">Tişört · Oversize</p>
               <h3>Quiet Is a Style.</h3>
@@ -293,7 +296,7 @@ a.card-link:hover .card-ph,a.card-link:focus-visible .card-ph{border-color:var(-
         </li>
         <li class="card soon" data-kat="tisort">
           <div class="card-link">
-            <div class="card-ph" style="--bg:#F4F5F5;--fg:#111316"><svg class="logo" aria-hidden="true" focusable="false"><use href="#mk"/></svg><span class="tag">Yakında</span></div>
+            <div class="card-ph"><img src="img/urun/quiet-tisort-beyaz-on.jpg" alt="Beyaz oversize tişört, siyah QUIET IS A STYLE. baskısı" loading="lazy" width="720" height="720"><span class="tag">Yakında</span></div>
             <div class="card-body">
               <p class="mono muted" style="margin:0">Tişört · Oversize</p>
               <h3>Quiet Is a Style.</h3>
@@ -303,30 +306,80 @@ a.card-link:hover .card-ph,a.card-link:focus-visible .card-ph{border-color:var(-
         </li>
         <li class="card soon" data-kat="hoodie">
           <div class="card-link">
-            <div class="card-ph"><img src="img/hoodie-siyah-arka.jpg" alt="Siyah oversize hoodie, sırtta beyaz kanat baskısı" loading="lazy" width="720" height="720"><span class="tag">Yakında</span></div>
+            <div class="card-ph"><img src="img/urun/wings-hoodie-siyah-arka.jpg" alt="Siyah oversize hoodie, sırtta beyaz kanat baskısı" loading="lazy" width="720" height="720"><img class="alt" src="img/urun/wings-hoodie-siyah-on.jpg" alt="" aria-hidden="true" loading="lazy" width="720" height="720"><span class="tag">Yakında</span></div>
             <div class="card-body">
               <p class="mono muted" style="margin:0">Hoodie · Premium Oversize</p>
-              <h3>Kanat Baskı Hoodie</h3>
-              <div class="card-row"><span class="col"><span class="dot" style="background:#15171A"></span><span class="mono">Siyah</span></span><span class="mono muted">Yakında</span></div>
+              <h3>Wings Hoodie</h3>
+              <div class="card-row"><span class="col"><span class="dot" style="background:#111316"></span><span class="mono">Siyah</span></span><span class="mono muted">Yakında</span></div>
             </div>
           </div>
         </li>
         <li class="card soon" data-kat="hoodie">
           <div class="card-link">
-            <div class="card-ph" style="--bg:#F4F5F5;--fg:#111316"><svg class="logo" aria-hidden="true" focusable="false"><use href="#mk"/></svg><span class="tag">Yakında</span></div>
+            <div class="card-ph"><img src="img/urun/wings-hoodie-beyaz-arka.jpg" alt="Beyaz oversize hoodie, sırtta siyah kanat baskısı" loading="lazy" width="720" height="720"><img class="alt" src="img/urun/wings-hoodie-beyaz-on.jpg" alt="" aria-hidden="true" loading="lazy" width="720" height="720"><span class="tag">Yakında</span></div>
             <div class="card-body">
               <p class="mono muted" style="margin:0">Hoodie · Premium Oversize</p>
-              <h3>Kanat Baskı Hoodie</h3>
+              <h3>Wings Hoodie</h3>
               <div class="card-row"><span class="col"><span class="dot" style="background:#F4F5F5"></span><span class="mono">Beyaz</span></span><span class="mono muted">Yakında</span></div>
             </div>
           </div>
         </li>
         <li class="card soon" data-kat="hoodie">
           <div class="card-link">
-            <div class="card-ph" style="--bg:#1C2745;--fg:#E7E9EB"><svg class="logo" aria-hidden="true" focusable="false"><use href="#mk"/></svg><span class="tag">Yakında</span></div>
+            <div class="card-ph"><img src="img/urun/wings-hoodie-lacivert-arka.jpg" alt="Lacivert oversize hoodie, sırtta beyaz kanat baskısı" loading="lazy" width="720" height="720"><img class="alt" src="img/urun/wings-hoodie-lacivert-on.jpg" alt="" aria-hidden="true" loading="lazy" width="720" height="720"><span class="tag">Yakında</span></div>
             <div class="card-body">
               <p class="mono muted" style="margin:0">Hoodie · Premium Oversize</p>
-              <h3>Kanat Baskı Hoodie</h3>
+              <h3>Wings Hoodie</h3>
+              <div class="card-row"><span class="col"><span class="dot" style="background:#1C2745"></span><span class="mono">Lacivert</span></span><span class="mono muted">Yakında</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="card soon" data-kat="hoodie">
+          <div class="card-link">
+            <div class="card-ph"><img src="img/urun/rose-hoodie-beyaz-arka.jpg" alt="Beyaz oversize hoodie, sırtta gül tutan el baskısı" loading="lazy" width="720" height="720"><img class="alt" src="img/urun/rose-hoodie-beyaz-on.jpg" alt="" aria-hidden="true" loading="lazy" width="720" height="720"><span class="tag">Yakında</span></div>
+            <div class="card-body">
+              <p class="mono muted" style="margin:0">Hoodie · Premium Oversize</p>
+              <h3>Rose Hoodie</h3>
+              <div class="card-row"><span class="col"><span class="dot" style="background:#F4F5F5"></span><span class="mono">Beyaz</span></span><span class="mono muted">Yakında</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="card soon" data-kat="hoodie">
+          <div class="card-link">
+            <div class="card-ph"><img src="img/urun/butterfly-hoodie-siyah-arka.jpg" alt="Siyah oversize hoodie, sırtta kelebek amblemi baskısı" loading="lazy" width="720" height="720"><img class="alt" src="img/urun/butterfly-hoodie-siyah-on.jpg" alt="" aria-hidden="true" loading="lazy" width="720" height="720"><span class="tag">Yakında</span></div>
+            <div class="card-body">
+              <p class="mono muted" style="margin:0">Hoodie · Premium Oversize</p>
+              <h3>Butterfly Hoodie</h3>
+              <div class="card-row"><span class="col"><span class="dot" style="background:#111316"></span><span class="mono">Siyah</span></span><span class="mono muted">Yakında</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="card soon" data-kat="hoodie">
+          <div class="card-link">
+            <div class="card-ph"><img src="img/urun/no07-hoodie-beyaz-arka.jpg" alt="Beyaz oversize hoodie, sırtta 07 numara baskısı" loading="lazy" width="720" height="720"><span class="tag">Yakında</span></div>
+            <div class="card-body">
+              <p class="mono muted" style="margin:0">Hoodie · Premium Oversize</p>
+              <h3>No. 07 Hoodie</h3>
+              <div class="card-row"><span class="col"><span class="dot" style="background:#F4F5F5"></span><span class="mono">Beyaz</span></span><span class="mono muted">Yakında</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="card soon" data-kat="sweat">
+          <div class="card-link">
+            <div class="card-ph"><img src="img/urun/quiet-sweatshirt-siyah-arka.jpg" alt="Siyah oversize sweatshirt, sırtta QUIET IS A STYLE. baskısı" loading="lazy" width="720" height="720"><img class="alt" src="img/urun/quiet-sweatshirt-siyah-on.jpg" alt="" aria-hidden="true" loading="lazy" width="720" height="720"><span class="tag">Yakında</span></div>
+            <div class="card-body">
+              <p class="mono muted" style="margin:0">Sweatshirt · Premium Oversize</p>
+              <h3>Quiet Is a Style. Sweatshirt</h3>
+              <div class="card-row"><span class="col"><span class="dot" style="background:#111316"></span><span class="mono">Siyah</span></span><span class="mono muted">Yakında</span></div>
+            </div>
+          </div>
+        </li>
+        <li class="card soon" data-kat="sweat">
+          <div class="card-link">
+            <div class="card-ph"><img src="img/urun/quiet-sweatshirt-lacivert-arka.jpg" alt="Lacivert oversize sweatshirt, sırtta QUIET IS A STYLE. baskısı" loading="lazy" width="720" height="720"><img class="alt" src="img/urun/quiet-sweatshirt-lacivert-on.jpg" alt="" aria-hidden="true" loading="lazy" width="720" height="720"><span class="tag">Yakında</span></div>
+            <div class="card-body">
+              <p class="mono muted" style="margin:0">Sweatshirt · Premium Oversize</p>
+              <h3>Quiet Is a Style. Sweatshirt</h3>
               <div class="card-row"><span class="col"><span class="dot" style="background:#1C2745"></span><span class="mono">Lacivert</span></span><span class="mono muted">Yakında</span></div>
             </div>
           </div>
