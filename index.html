@@ -238,6 +238,10 @@ a.card-link:hover .buy{opacity:.7}
 @keyframes shade{0%,50%,100%{transform:scaleX(1)}25%,75%{transform:scaleX(.55)}}
 .stage-link:hover .spin,.stage-link:hover .shadow,.stage-link:focus-visible .spin,.stage-link:focus-visible .shadow{animation-play-state:paused}
 @media (prefers-reduced-motion: reduce){.spin,.shadow{animation:none}}
+.stage-3d{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;-webkit-user-drag:none}
+.stage-3d:active{cursor:grabbing}
+.stage.is-3d .spin{display:none}
+.stage.is-3d .shadow{animation:none}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 </style>
 
@@ -720,5 +724,6 @@ a.card-link:hover .buy{opacity:.7}
   tabs.forEach(function(t){t.addEventListener('click',function(){setFilter(t.getAttribute('data-filter'));});});
 })();
 </script>
+<script type="module" src="js/rose3d.js"></script>
 </body>
 </html>
